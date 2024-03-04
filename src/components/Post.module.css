@@ -43,14 +43,6 @@
     align-items: center;
     gap: 1rem;
 }
-.author img {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 8px;
-
-    border: 2px solid var(--gray-800);
-    outline: 2px solid var(--green-500);
-}
 
 .authorInfo strong {
     display: block;
