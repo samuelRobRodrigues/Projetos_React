@@ -8,10 +8,10 @@ import { Sidebar } from './components/Sidebar'
 
 const posts = [
   {
-    id: 1,
+    id: 123,
     author: {
       avatarUrl: 'https://github.com/samuelrobrodrigues.png',
-      name: 'Samuel Roberto',
+      name: 'Samuel Robert',
       role: 'Web developer',
     },
     content: [
