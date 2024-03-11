@@ -35,7 +35,7 @@ const posts = [
     ],
     publishedAt: new Date('2024-03-09 16:48:00'),
   }
-];
+]; 
 export function App() {
 
   return (
