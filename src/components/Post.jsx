@@ -11,8 +11,8 @@ import { useState } from 'react';
 
 export function Post({ author, publishedAt, content }) {
     const [comments, setComments ] = useState([
-        1,
-        2,
+        'Post muito bacana, uau!'
+        
     ])
 
     const publishedDateFormatted = format(publishedAt, "d 'de LLLL 'às' HH:mm'h'",{
@@ -28,7 +28,11 @@ export function Post({ author, publishedAt, content }) {
     function createNewComment() {
         event.preventDefault()
 
-        setComments([1, 2, 3]);
+        const newCommentText = event.target.comment.value
+
+        setComments([...comments, newCommentText])
+
+        event.target.comment.value = '';
     }
 
     return (
@@ -61,6 +65,7 @@ export function Post({ author, publishedAt, content }) {
                 <strong>Deixe seu feedback</strong>
 
                 <textarea 
+                    name="comment"
                     placeholder="Deixe um comentário"
                 />
                 <footer>
@@ -70,7 +75,7 @@ export function Post({ author, publishedAt, content }) {
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment />
+                    return <Comment content={comment}/>
                 })}
             </div>
 
