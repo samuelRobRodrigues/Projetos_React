@@ -38,11 +38,13 @@ export function Post({ author, publishedAt, content }) {
     }
 
     function newCommentChange() {
+
+        event.target.setCustomValidity('')
         setNewCommentText(event.target.value);
     }
 
     function newCommentInvalid() {
-        console.log(event)
+        event.target.setCustomValidity('Esse campo é obrigatório.')
     }
 
 
