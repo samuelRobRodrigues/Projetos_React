@@ -40,7 +40,7 @@ export function Post({ author, publishedAt, content }) {
     function newCommentChange() {
 
         event.target.setCustomValidity('')
-        setNewCommentText(event.target.value);
+        setNewCommentText(event.target.value)
     }
 
     function newCommentInvalid() {
@@ -53,7 +53,7 @@ export function Post({ author, publishedAt, content }) {
             return comments != commentToDelete;
         })
 
-        setComments(commentsWithoutDeletedOne);
+        setComments(commentsWithoutDeletedOne)
     }
 
     return (
