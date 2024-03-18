@@ -35,17 +35,17 @@ export function Post({ author, publishedAt, content }) {
         setComments([...comments, newCommentText]);
         setNewCommentText('');
 
-    }
+    };
 
     function newCommentChange() {
 
         event.target.setCustomValidity('')
         setNewCommentText(event.target.value)
-    }
+    };
 
     function newCommentInvalid() {
         event.target.setCustomValidity('Esse campo é obrigatório.')
-    }
+    };
 
 
     function deleteComment(commentToDelete) {
@@ -54,7 +54,7 @@ export function Post({ author, publishedAt, content }) {
         })
 
         setComments(commentsWithoutDeletedOne)
-    }
+    };
 
     return (
         <article className={styles.post}>
