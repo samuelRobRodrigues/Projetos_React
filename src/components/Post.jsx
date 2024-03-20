@@ -11,11 +11,12 @@ import { useState } from 'react';
 
 export function Post({ author, publishedAt, content }) {
     const [comments, setComments ] = useState([
-        'Post muito bacana, uau!'
         
     ])
 
     const [newCommentText, setNewCommentText] = useState('')
+
+    console.log(newCommentText);
 
     const publishedDateFormatted = format(publishedAt, "d 'de LLLL 'às' HH:mm'h'",{
         locale: ptBr,
@@ -50,11 +51,13 @@ export function Post({ author, publishedAt, content }) {
 
     function deleteComment(commentToDelete) {
         const commentsWithoutDeletedOne = comments.filter(comment => {
-            return comments != commentToDelete;
+            return comment !== commentToDelete;
         })
-
+    
         setComments(commentsWithoutDeletedOne)
     };
+
+    const isNewCommentEmpty = newCommentText.length == 0
 
     return (
         <article className={styles.post}>
@@ -94,7 +97,9 @@ export function Post({ author, publishedAt, content }) {
                     required
                 />
                 <footer>
-                <button type="submit">Comentar</button>
+                    <button type="submit" disabled={isNewCommentEmpty}>
+                        Comentar
+                    </button>
                 </footer>
             </form>
 
